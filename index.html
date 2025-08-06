@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DropPoint | Lost & Found</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-[#f5f7f9] text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-blue-900">DropPoint</div>
+      <div class="space-x-6">
+        <a href="#how" class="text-gray-700 hover:text-blue-800">How It Works</a>
+        <a href="login.html" class="text-blue-600 hover:text-white border border-blue-600 px-4 py-2 rounded hover:bg-blue-600 transition">Login</a>
+        <a href="register.html" class="text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 transition">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 pt-24 px-6">
+    <div class="text-center space-y-6 max-w-2xl fade-up">
+      <h1 class="text-4xl sm:text-5xl font-bold text-blue-900 leading-tight">Find What’s Lost. Return What’s Found.</h1>
+      <p class="text-lg text-gray-700">DropPoint is Metropolitan University’s official Lost & Found platform. Post items, track them, and connect with the rightful owners easily.</p>
+      <a href="login.html" class="inline-block mt-4 px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-lg">Get Started</a>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">How It Works</h2>
+      <div class="grid md:grid-cols-3 gap-8 fade-up">
+        <div class="bg-blue-50 p-6 rounded-lg shadow hover:shadow-md transition">
+          <div class="text-4xl font-bold text-blue-600 mb-4">1</div>
+          <h3 class="text-xl font-semibold mb-2">Post an Item</h3>
+          <p class="text-gray-600">Found or lost something? Post it with item details, date, and image.</p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-lg shadow hover:shadow-md transition">
+          <div class="text-4xl font-bold text-blue-600 mb-4">2</div>
+          <h3 class="text-xl font-semibold mb-2">Get Matched</h3>
+          <p class="text-gray-600">Others will see your post and reach out if they have it or know about it.</p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-lg shadow hover:shadow-md transition">
+          <div class="text-4xl font-bold text-blue-600 mb-4">3</div>
+          <h3 class="text-xl font-semibold mb-2">Recover or Return</h3>
+          <p class="text-gray-600">Connect and return the item safely through the campus network.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-6 mt-10">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      © 2025 DropPoint | Built for Metropolitan University
+    </div>
+  </footer>
+
+  <script>
+    // Scroll animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
